@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const bikeNamesRoute = require('./routes/bikeNames');
+app.use('/bikeNames', bikeNamesRoute);
 
 //Please don't delete this health API
 app.use('/api/health', (req, res) => {
